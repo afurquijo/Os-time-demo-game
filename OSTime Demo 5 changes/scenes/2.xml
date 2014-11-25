@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scene PGFVersion="0.19" GSCVersion="0.10.5" id="id190699">
+  <layers>
+    <layer id="id889051">
+      <actors>
+        <actor id="id103161" prototype="id290071">
+          <attributes>
+            <point id="position">
+              <real id="x">240</real>
+              <real id="y">6</real>
+            </point>
+            <size id="size">
+              <real id="width">800</real>
+              <real id="height">800</real>
+            </size>
+            <angle id="rotation">0</angle>
+          </attributes>
+          <behaviors>
+            <behavior id="id338596" class="NoteBehavior" enabled="true">
+              <attributes>
+                <text id="name">Note</text>
+                <text id="bundleName">Note.behavior</text>
+                <text id="note">Use the TimelapseMultiplier attribute to make the time(rotation) go faster.
+1=Normal Time (accuracy by hour)
+24 = One cycle happens in 1 hour. (accuracy by minutes)
+1440 = One cycle happens in 1 minute. (accuracy by seconds)</text>
+              </attributes>
+            </behavior>
+            <behavior id="id418962" class="CompoundBehavior" enabled="true">
+              <attributes>
+                <text id="name">SkyDome Rotation</text>
+                <text id="bundleName">Group.behavior</text>
+              </attributes>
+              <behaviors>
+                <behavior id="id401200" class="NoteBehavior" enabled="true">
+                  <attributes>
+                    <text id="name">Note</text>
+                    <text id="bundleName">Note.behavior</text>
+                    <text id="note">The behavior below will rotate this sky dome at real time with the day cycle. With the timelapse multiplier at 1, the skydome will rotate once every 24 hours.</text>
+                  </attributes>
+                </behavior>
+                <behavior id="id676105" class="ConstrainAttributeBehavior" enabled="true">
+                  <attributes>
+                    <text id="name">Constrain Attribute: Actual Time with Timelapse</text>
+                    <text id="bundleName">ConstrainAttribute.behavior</text>
+                    <text id="targetAttribute">self.attributes.rotation</text>
+                    <text id="RHS">
+                      <expression>
+                        <string xml:space="preserve">180+(</string>
+                        <reference keypath="game.devices.clock.hour" />
+                        <string xml:space="preserve">+</string>
+                        <reference keypath="game.devices.clock.minute" />
+                        <string xml:space="preserve">/60+</string>
+                        <reference keypath="game.devices.clock.second" />
+                        <string xml:space="preserve">/3600+</string>
+                        <reference keypath="game.devices.clock.millisecond" />
+                        <string xml:space="preserve">/3600000)*15*</string>
+                        <reference keypath="self.attributes.id558076" />
+                      </expression>
+                    </text>
+                  </attributes>
+                </behavior>
+              </behaviors>
+            </behavior>
+            <behavior id="id110574" class="ConstrainAttributeBehavior" enabled="true">
+              <attributes>
+                <text id="name">Constrain Attribute - set global attribute for "Sky Rotation" with self rotation value.</text>
+                <text id="bundleName">ConstrainAttribute.behavior</text>
+                <text id="targetAttribute">game.attributes.id937994</text>
+                <text id="RHS">
+                  <expression>
+                    <reference keypath="self.attributes.rotation" />
+                  </expression>
+                </text>
+              </attributes>
+            </behavior>
+          </behaviors>
+          <aspects>
+            <graphics>
+              <attributes>
+                <integer id="tileWidth" name="tileWidth">0</integer>
+                <integer id="tileHeight" name="tileHeight">0</integer>
+              </attributes>
+            </graphics>
+            <motion />
+            <physics>
+              <attributes />
+            </physics>
+          </aspects>
+        </actor>
+        <actor id="id809520" prototype="id937256">
+          <attributes>
+            <point id="position">
+              <real id="x">241</real>
+              <real id="y">66.5</real>
+            </point>
+            <size id="size">
+              <real id="width">480</real>
+              <real id="height">132</real>
+            </size>
+          </attributes>
+          <aspects>
+            <graphics>
+              <attributes>
+                <integer id="tileWidth" name="tileWidth">0</integer>
+                <integer id="tileHeight" name="tileHeight">0</integer>
+              </attributes>
+            </graphics>
+            <motion />
+            <physics>
+              <attributes />
+            </physics>
+          </aspects>
+        </actor>
+        <actor id="id859540" prototype="id996950">
+          <attributes>
+            <point id="position">
+              <real id="x">88.5</real>
+              <real id="y">76.5</real>
+            </point>
+            <size id="size">
+              <real id="width">88</real>
+              <real id="height">88</real>
+            </size>
+          </attributes>
+          <aspects>
+            <graphics>
+              <attributes>
+                <integer id="tileWidth" name="tileWidth">0</integer>
+                <integer id="tileHeight" name="tileHeight">0</integer>
+              </attributes>
+            </graphics>
+            <motion />
+            <physics>
+              <attributes />
+            </physics>
+          </aspects>
+        </actor>
+        <actor id="id274817" prototype="id447889">
+          <attributes>
+            <point id="position">
+              <real id="x">88</real>
+              <real id="y">76.5</real>
+            </point>
+            <size id="size">
+              <real id="width">88</real>
+              <real id="height">88</real>
+            </size>
+          </attributes>
+          <aspects>
+            <graphics>
+              <attributes>
+                <integer id="tileWidth" name="tileWidth">0</integer>
+                <integer id="tileHeight" name="tileHeight">0</integer>
+              </attributes>
+            </graphics>
+            <motion />
+            <physics>
+              <attributes />
+            </physics>
+          </aspects>
+        </actor>
+        <actor id="id529079" prototype="id683086">
+          <attributes>
+            <point id="position">
+              <real id="x">88</real>
+              <real id="y">77.5</real>
+            </point>
+            <size id="size">
+              <real id="width">88</real>
+              <real id="height">88</real>
+            </size>
+          </attributes>
+          <aspects>
+            <graphics>
+              <attributes>
+                <integer id="tileWidth" name="tileWidth">0</integer>
+                <integer id="tileHeight" name="tileHeight">0</integer>
+              </attributes>
+            </graphics>
+            <motion />
+            <physics>
+              <attributes />
+            </physics>
+          </aspects>
+        </actor>
+        <actor id="id792451" prototype="id979632">
+          <attributes>
+            <point id="position">
+              <real id="x">322.5</real>
+              <real id="y">158.5</real>
+            </point>
+            <size id="size">
+              <real id="width">313</real>
+              <real id="height">320</real>
+            </size>
+          </attributes>
+          <aspects>
+            <graphics>
+              <attributes>
+                <integer id="tileWidth" name="tileWidth">0</integer>
+                <integer id="tileHeight" name="tileHeight">0</integer>
+              </attributes>
+            </graphics>
+            <motion />
+            <physics>
+              <attributes />
+            </physics>
+          </aspects>
+        </actor>
+        <actor id="id336786" prototype="id137556">
+          <attributes>
+            <point id="position">
+              <real id="x">244</real>
+              <real id="y">153.5</real>
+            </point>
+            <size id="size">
+              <real id="width">493</real>
+              <real id="height">332</real>
+            </size>
+          </attributes>
+          <behaviors>
+            <behavior id="id708005" class="CompoundBehavior" enabled="true">
+              <attributes>
+                <text id="name">Group</text>
+                <text id="bundleName">Group.behavior</text>
+              </attributes>
+              <behaviors>
+                <behavior id="id100848" class="RuleBehavior" enabled="true">
+                  <attributes>
+                    <text id="name">Rule: Undim</text>
+                    <text id="bundleName">Rule.behavior</text>
+                    <real id="compoundConditionKind">0</real>
+                  </attributes>
+                  <conditions>
+                    <condition id="id125479" eventType="mouse button" pluginPredicateTypeIndex="0">
+                      <attributes>
+                        <index id="conditionType">1</index>
+                        <text id="subjectAttribute">game.attributes.id937994</text>
+                      </attributes>
+                      <predicate type="number">
+                        <attributes>
+                          <text id="operator">&gt;=</text>
+                          <real id="RHS">45</real>
+                        </attributes>
+                      </predicate>
+                    </condition>
+                    <condition id="id701424" eventType="mouse button" pluginPredicateTypeIndex="0">
+                      <attributes>
+                        <index id="conditionType">1</index>
+                        <text id="subjectAttribute">game.attributes.id937994</text>
+                      </attributes>
+                      <predicate type="number">
+                        <attributes>
+                          <text id="operator">&lt;</text>
+                          <real id="RHS">135</real>
+                        </attributes>
+                      </predicate>
+                    </condition>
+                  </conditions>
+                  <behaviors>
+                    <behavior id="id935032" class="ConstrainAttributeBehavior" enabled="true">
+                      <attributes>
+                        <text id="name">Constrain Attribute</text>
+                        <text id="bundleName">ConstrainAttribute.behavior</text>
+                        <text id="targetAttribute">self.attributes.color.alpha</text>
+                        <text id="RHS">
+                          <expression>
+                            <string xml:space="preserve">.3*(</string>
+                            <reference keypath="game.attributes.id937994" />
+                            <string xml:space="preserve">-45)/90</string>
+                          </expression>
+                        </text>
+                      </attributes>
+                    </behavior>
+                  </behaviors>
+                </behavior>
+                <behavior id="id178408" class="RuleBehavior" enabled="true">
+                  <attributes>
+                    <text id="name">Rule: FullDim</text>
+                    <text id="bundleName">Rule.behavior</text>
+                    <real id="compoundConditionKind">0</real>
+                  </attributes>
+                  <conditions>
+                    <condition id="id514981" eventType="mouse button" pluginPredicateTypeIndex="0">
+                      <attributes>
+                        <index id="conditionType">1</index>
+                        <text id="subjectAttribute">game.attributes.id937994</text>
+                      </attributes>
+                      <predicate type="number">
+                        <attributes>
+                          <text id="operator">&gt;=</text>
+                          <real id="RHS">135</real>
+                        </attributes>
+                      </predicate>
+                    </condition>
+                    <condition id="id613257" eventType="mouse button" pluginPredicateTypeIndex="0">
+                      <attributes>
+                        <index id="conditionType">1</index>
+                        <text id="subjectAttribute">game.attributes.id937994</text>
+                      </attributes>
+                      <predicate type="number">
+                        <attributes>
+                          <text id="operator">&lt;</text>
+                          <real id="RHS">225</real>
+                        </attributes>
+                      </predicate>
+                    </condition>
+                  </conditions>
+                  <behaviors>
+                    <behavior id="id369364" class="ChangeAttributeAction" enabled="true">
+                      <attributes>
+                        <text id="name">Change Attribute</text>
+                        <text id="bundleName">ChangeAttribute.behavior</text>
+                        <text id="targetAttribute">self.attributes.color.alpha</text>
+                        <text id="RHS">.3</text>
+                      </attributes>
+                    </behavior>
+                  </behaviors>
+                </behavior>
+                <behavior id="id833758" class="RuleBehavior" enabled="true">
+                  <attributes>
+                    <text id="name">Rule: Undim</text>
+                    <text id="bundleName">Rule.behavior</text>
+                    <real id="compoundConditionKind">0</real>
+                  </attributes>
+                  <conditions>
+                    <condition id="id317084" eventType="mouse button" pluginPredicateTypeIndex="0">
+                      <attributes>
+                        <index id="conditionType">1</index>
+                        <text id="subjectAttribute">game.attributes.id937994</text>
+                      </attributes>
+                      <predicate type="number">
+                        <attributes>
+                          <text id="operator">&gt;=</text>
+                          <real id="RHS">225</real>
+                        </attributes>
+                      </predicate>
+                    </condition>
+                    <condition id="id217694" eventType="mouse button" pluginPredicateTypeIndex="0">
+                      <attributes>
+                        <index id="conditionType">1</index>
+                        <text id="subjectAttribute">game.attributes.id937994</text>
+                      </attributes>
+                      <predicate type="number">
+                        <attributes>
+                          <text id="operator">&lt;</text>
+                          <real id="RHS">315</real>
+                        </attributes>
+                      </predicate>
+                    </condition>
+                  </conditions>
+                  <behaviors>
+                    <behavior id="id446651" class="ConstrainAttributeBehavior" enabled="true">
+                      <attributes>
+                        <text id="name">Constrain Attribute</text>
+                        <text id="bundleName">ConstrainAttribute.behavior</text>
+                        <text id="targetAttribute">self.attributes.color.alpha</text>
+                        <text id="RHS">
+                          <expression>
+                            <string xml:space="preserve">.3-.3*(</string>
+                            <reference keypath="game.attributes.id937994" />
+                            <string xml:space="preserve">-225)/90</string>
+                          </expression>
+                        </text>
+                      </attributes>
+                    </behavior>
+                  </behaviors>
+                </behavior>
+                <behavior id="id682392" class="RuleBehavior" enabled="true">
+                  <attributes>
+                    <text id="name">Rule: NoDim</text>
+                    <text id="bundleName">Rule.behavior</text>
+                    <real id="compoundConditionKind">1</real>
+                  </attributes>
+                  <conditions>
+                    <condition id="id678361" eventType="mouse button" pluginPredicateTypeIndex="0">
+                      <attributes>
+                        <index id="conditionType">1</index>
+                        <text id="subjectAttribute">game.attributes.id937994</text>
+                      </attributes>
+                      <predicate type="number">
+                        <attributes>
+                          <text id="operator">&gt;=</text>
+                          <real id="RHS">315</real>
+                        </attributes>
+                      </predicate>
+                    </condition>
+                    <condition id="id193046" eventType="mouse button" pluginPredicateTypeIndex="0">
+                      <attributes>
+                        <index id="conditionType">1</index>
+                        <text id="subjectAttribute">game.attributes.id937994</text>
+                      </attributes>
+                      <predicate type="number">
+                        <attributes>
+                          <text id="operator">&lt;</text>
+                          <real id="RHS">45</real>
+                        </attributes>
+                      </predicate>
+                    </condition>
+                  </conditions>
+                  <behaviors>
+                    <behavior id="id538867" class="ChangeAttributeAction" enabled="true">
+                      <attributes>
+                        <text id="name">Change Attribute</text>
+                        <text id="bundleName">ChangeAttribute.behavior</text>
+                        <text id="targetAttribute">self.attributes.color.alpha</text>
+                        <text id="RHS">0</text>
+                      </attributes>
+                    </behavior>
+                  </behaviors>
+                </behavior>
+              </behaviors>
+            </behavior>
+          </behaviors>
+          <aspects>
+            <graphics>
+              <attributes>
+                <integer id="tileWidth" name="tileWidth">0</integer>
+                <integer id="tileHeight" name="tileHeight">0</integer>
+              </attributes>
+            </graphics>
+            <motion />
+            <physics>
+              <attributes />
+            </physics>
+          </aspects>
+        </actor>
+        <actor id="id176025" prototype="id368753">
+          <attributes>
+            <point id="position">
+              <real id="x">57</real>
+              <real id="y">268</real>
+            </point>
+            <size id="size">
+              <real id="width">117</real>
+              <real id="height">105</real>
+            </size>
+          </attributes>
+          <aspects>
+            <graphics>
+              <attributes>
+                <integer id="tileWidth" name="tileWidth">0</integer>
+                <integer id="tileHeight" name="tileHeight">0</integer>
+              </attributes>
+            </graphics>
+            <motion />
+            <physics>
+              <attributes />
+            </physics>
+          </aspects>
+        </actor>
+        <actor id="id956532" prototype="id259996">
+          <attributes>
+            <point id="position">
+              <real id="x">16</real>
+              <real id="y">248</real>
+            </point>
+            <size id="size">
+              <real id="width">1</real>
+              <real id="height">8</real>
+            </size>
+            <angle id="rotation">0</angle>
+          </attributes>
+          <aspects>
+            <graphics>
+              <attributes>
+                <integer id="tileWidth" name="tileWidth">0</integer>
+                <integer id="tileHeight" name="tileHeight">0</integer>
+              </attributes>
+            </graphics>
+            <motion />
+            <physics>
+              <attributes />
+            </physics>
+          </aspects>
+        </actor>
+      </actors>
+      <attributes>
+        <text id="name">Background</text>
+        <boolean id="scrollable">true</boolean>
+      </attributes>
+    </layer>
+  </layers>
+  <attributes>
+    <text id="name">Time Lapse</text>
+    <real id="time">0</real>
+    <size id="size">
+      <real id="width">480</real>
+      <real id="height">320</real>
+    </size>
+    <boolean id="wrapX">false</boolean>
+    <boolean id="wrapY">false</boolean>
+    <point id="gravity">
+      <real id="x">0</real>
+      <real id="y">0</real>
+    </point>
+    <color id="color">
+      <real id="red">0</real>
+      <real id="green">0</real>
+      <real id="blue">0</real>
+      <real id="alpha">1</real>
+    </color>
+    <rect id="camera">
+      <point id="origin">
+        <real id="x">0</real>
+        <real id="y">0</real>
+      </point>
+      <size id="size">
+        <real id="width">480</real>
+        <real id="height">320</real>
+      </size>
+      <size id="trackingArea">
+        <real id="width">400</real>
+        <real id="height">240</real>
+      </size>
+      <real id="rotation">0</real>
+    </rect>
+    <attributes id="autorotate">
+      <boolean id="landscapeLeft">true</boolean>
+      <boolean id="portrait">false</boolean>
+      <boolean id="landscapeRight">false</boolean>
+      <boolean id="portraitUpsideDown">false</boolean>
+    </attributes>
+  </attributes>
+</scene>
